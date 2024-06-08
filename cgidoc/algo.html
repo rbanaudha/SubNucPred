@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <title>SubNucPred:: A web-server for prediction of sub-nuclear localization of proteins:: Help</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div id="topPan">
+      <a href="index.html"><img src="images/logo.jpg" alt="SubNucPred" width="245" height="37" border="0"  class="logo" title="SubNucPred"/></a>
+      <p>A webserver for prediction of sub-nuclear location</p>    
+      
+      <div id="topContactPan">
+      </div>
+      <div id="topMenuPan">
+	<div id="topMenuLeftPan"></div>
+	<div id="topMenuMiddlePan">
+	  <ul>
+	    <li><a href="index.html">Home</a></li>
+	    <li><a href="submission.html">Submission</a></li>
+	    <!--<li class="home">Help</li>-->
+	    <li><a href="help.html">Help</a></li>
+	    <li><a href="download.html">Standalone</a></li>
+	    <li><a href="download.html">Dataset</a></li>
+	    <li><a href="algo.html">Algorithm</a></li>
+	    <li><a href="developers.html">Developers</a></li>
+	    <li><a href="contact.html">Contact</a></li>
+	  </ul>
+	</div>
+	  <div id="topMenuRightPan"></div>
+      </div>
+    </div>
+    <div id="bodyPan">
+      <div id="bodyCENTERPan">
+  	<h2><span>Algorithm</span></h2><br>
+	  <p>SubNucPred is a two step nuclear location prediction program, which is based on combined approach of Pfam domain search and SVM prediction. At first instance, when query sequence is presented to the SubNucPred predictor, it first searches for Pfam domains in the query sequence. If a Pfam domain is found, the predictor directs the query sequence to Method-I where the location is predicted on the basis of presence of unique Pfam domain (unique Pfam domains are domains which are found only in a specific sub-nuclear location, nowhere else in the cell). If Method-I does not find any unique domain, the query is forwarded to Method-II, which uses amino acid composition based SVM modules for prediction.</p><br><p>At SVM based prediction, two-layered prediction is adopted. In first layer prediction is done for (1) centromere (2) chromosome (3) nuclear speckle (4) nucleolus and (5) Others (containing nuclear envelope, nuclear matrix, nucleoplasm, nuclear pore complex, PML body and telomere). In second layer, sequences belonging to locations 'others' were used only and SVM models were developed using the data of 'Others' location only. For each location, SVM model gives a score. Location having maximum score is predicted as the most probable location. The predictor enters the locations of 'Others' only if the maximum score obtained was from 'Others' the query will be forwarded to layer-II. The figure 1 shows flow diagram of SubNucPred.</p><br>
+	      </div>
+	      <div id="bodyLOWERPan">
+		<table align='center' width='100%'>
+		  <tr border='2'><td><a target="_blank"><img align="center" border="1" src="images/fig1.jpg" width="700" height="550"></td></a></tr></table>
+		  <!--<tr border='2'><td><a target="_blank"><img align="center" border="1" src="images/algo.png" width="700" height="550"></td></a></tr></table>-->
+		  <br><b>Figure 1.</b> Flow diagram of SubNucPred.<br><br>
+		      </div>
+		    </body>
+		  </html>
+		  

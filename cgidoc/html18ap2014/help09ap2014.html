@@ -1,0 +1,84 @@
+<html> 
+  <head> 
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <title>SubNucPred</title>
+  </head> 
+  <body BGCOLOR='white'>
+    <table border="0" cellpadding="0" cellspacing="0" class="tbl1" width="100%" BORDER="2">
+      <tr> 
+	<td colspan="4"></td>
+      </tr>
+      
+      <tr align="center"> 
+	<td width="80%" height="135"> <font size =+150 face = "Impact">SubNucPred</font><BR></td>
+      </tr>
+      <tr>
+	<td colspan="3"> 
+	  <tr>
+	    <td align="top" colspan="4">
+	      
+	      <!-- START OF 2nd TABLE -->
+	      
+              <table width="100%" border="0" cellspacing="10" border="10">
+		<tr> 
+		  <td width="8%" valign="top"><br>
+		    
+		    <!-- START OF 3rd TABLE -->
+		    
+		    <table>
+		      <br><br>
+		      <tr><th ALIGN = "CENTER">Links</th></tr>
+		      <tr><td ALIGN = "CENTER"><a href="index.html"><B>Home</B></a></td></tr>
+		      <tr><td ALIGN = "CENTER"><a href="sub.html"><B>Submission Form</B></a></td></tr>
+		      <tr><td ALIGN = "CENTER"><a href="help.html"><B>How to Use</B></a></td></tr>
+                      <tr><td ALIGN = "CENTER"><a href="download.html"><b>Downloads</b></a></td></tr>
+		      <tr><td ALIGN = "CENTER"><a href="team.html"><B>Developers</B></a></td></tr>
+		      <tr><td ALIGN = "CENTER"><a href="contact.html"><B>Contact</B></a></td></tr>
+                      <tr><td></td></tr>
+                      <tr><td></td></tr>
+		    </table> 
+		    
+		    <!-- END OF TABLE 3 -->
+		    
+		  </td>        
+		  
+		  <td width="300%">
+		    <br>
+		    <h2 ALIGN = "CENTER">How to Use</h2>
+                    <hr ALIGN ="CENTER"> </hr> 
+		    <table><tr>
+			<td><h3>Algorithm</h3><P Align='justify'>The SubNucPred predictor first searches for Pfam domains in the query sequence. If a Pfam domain is found, the predictor directs the query sequence to Method-I where the location is predicted on the basis of presence of unique Pfam domain. If Method-I does not find any unique domain, the query is forwarded to Method-II, which uses amino acid composition based SVM modules for prediction.<br>For SVM based prediction, we adopted two-layered training approach. In first layer we kept location with more than 50 proteins viz (1) centromere (2) chromosome (3) nuclear speckle (4) nucleolus and (5) others containing all locations having less than 50 proteins (nuclear envelope, nuclear matrix, nucleoplasm, nuclear pore complex, PML body and telomere). In second layer, sequences belonging to locations 'others' were used only and SVM models were developed using the data of 'others' location only. In short, SubNucPred presents the query protein to layer-I and predicts it as a member of class which has maximum score. In case, the  maximum score obtained was from 'Others' the query will be forwarded to layer-II. The figue 1 shows flow diagram of SubNucPred</P>
+<table align='center' width='100%'>
+  <tr border='2'><td><a target="_blank"><img align="center" border="1" src="image/algo.png" width="700" height="510"></td></a></tr></table>
+<br><b>Figure 1.</b> Flow diagram of SubNucPred.
+<h3>Input Sequences</h3><P Align='justify'>User can submit single as well as multiple sequences at a time in fasta format. If user submit less than or equal to 25 sequences, the server predict all the sequences but if user submit more than 25 sequences, the server predict only first 25 sequences. User can also upload single or multiple sequence sequence file in fasta format. Here is an example sequence and the figure 2 to show how to input protein sequences.</P>
+<P>Example Sequence</P><P>>sp|P07199|CENPB_HUMAN Major centromere autoantigen B OS=Homo sapiens GN=CENPB PE=1 SV=2
+MGPKRRQLTFREKSRIIQEVEENPDLRKGEIARRFNIPPSTLSTILKNKRAILASERKYG
+VASTCRKTNKLSPYDKLEGLLIAWFQQIRAAGLPVKGIILKEKALRIAEELGMDDFTASN
+GWLDRFRRRHGVVSCSGVARARARNAAPRTPAAPASPAAVPSEGSGGSTTGWRAREEQPP
+SVAEGYASQDVFSATETSLWYDFLPDQAAGLCGGDGRPRQATQRLSVLLCANADGSEKLP
+PLVAGKSAKPRAGQAGLPCDYTANSKGGVTTQALAKYLKALDTRMAAESRRVLLLAGRLA
+AQSLDTSGLRHVQLAFFPPGTVHPLERGVVQQVKGHYRQAMLLKAMAALEGQDPSGLQLG
+LTEALHFVAAAWQAVEPSDIAACFREAGFGGGPNATITTSLKSEGEEEEEEEEEEEEEEG
+EGEEEEEEGEEEEEEGGEGEELGEEEEVEEEGDVDSDEEEEEDEESSSEGLEAEDWAQGV
+VEAGGSFGAYGAQEEAQCPTLHFLEGGEDSDSDSEEEDDEEEDDEDEDDDDDEEDGDEVP
+VPSFGEAMAYFAMVKRYLTSFPIDDRVQSHILHLEHDLVHVTRKNHARQAGVRGLGHQS</P><br>
+			</td>
+		    </tr></table>
+		    <table align='center' width='100%'>
+		      <tr border='2'><td><a target="_blank"><img align="center" border="1" src="image/sub_page.png" width="700" height="410"></td></a></tr></table>
+		    <br><b>Figure 2.</b> SubNucPred submission page showing how to insert input sequences.
+		    <table><tr><td><br><h3>Prediction Result</h3><P Align='justify'>When user submit the query, the predictin results comes on same window in a tabular form. If the query protein were predicted according  to their unique Pfam domain, the result shows predicted location and domain based prediction in a table and if the query proteins predict according to SVM score the result shows predicted location and their corresponding SVM score. Here is a figure 3 to show how the results looks like.</P>
+		    </td></tr></table>
+		    <table align='center' width='100%'>
+		      <tr border='2'><td><a target="_blank"><img align="center" border="1" src="image/result.png" width="700" height="410"></td></a></tr></table>
+		    <br><b>Figure 3.</b> SubNucPred prediction result.
+		    <br>
+		  </td>
+		</tr>
+	      </table>
+	    </td>
+	  </tr>
+    </table>
+  </body>
+</html>

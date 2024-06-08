@@ -1,0 +1,92 @@
+<html> 
+  <head> 
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <TITLE>SubNucPred</TITLE>
+    <script type="text/javascript">
+    </script>
+  </head> 
+  <body BGCOLOR='white'>
+    
+    <!-- START OF 1st TABLE -->
+    <table border="0" cellpadding="0" cellspacing="0" class="tbl1" width="100%">
+      <tr> 
+	<td colspan="4"></td>
+      </tr>
+      <tr valign="center"> 
+	<td width="60%" height="135" align ="center"> <font size =+150 face = "Impact">SubNucPred</font><BR></td>
+      </tr>
+      <tr>
+	<td colspan="3"> 
+	  <tr>
+	    <td valign="top" colspan="4">
+	      
+	      <!-- START OF 2nd TABLE -->
+              <table width="100%" border="0" cellspacing="10">
+		<tr>
+		  <td width="8%" valign="top"><br>
+		    <!-- START OF 3rd TABLE -->
+		    <TABLE>
+		      <BR>
+		      <TR><TH ALIGN = "CENTER">Links</TH></TR>
+		      <TR><TD ALIGN = "CENTER"><a href="index.html"><b>Home</b></a></TD></TR>
+		      <TR><TD ALIGN = "CENTER"><a href="sub.html"><b>Submission Form</b></TD></TR>
+		      <tr><td ALIGN = "CENTER"><a href="help.html"><B>How to Use</B></a></td></tr>
+		      <TR><TD ALIGN = "CENTER"><a href="download.html"><b>Downloads</b></a></TD></TR>
+		      <TR><TD ALIGN = "CENTER"><a href="team.html"><B>Developers</B></a></TD></TR>
+		      <TR><TD ALIGN = "CENTER"><a href="contact.html"><b>Contact</b></a></TD></TR>
+		      <TR><TD></TD></TR>
+		      <TR><TD></TD></TR>
+		    </TABLE> 
+		    <!-- END OF TABLE 3 -->
+		  </td>        
+		  <td width="92%">
+		    <br><br>
+		    <h2 ALIGN = "CENTER"> Submission Form</h2>
+                    <HR ALIGN ="CENTER"> </HR> 
+		    <FORM ACTION ="/cgi-bin/subnucpred/valid.pl" ENCTYPE="multipart/form-data" METHOD="post">
+                      
+			<P ALIGN ="CENTER"><b> Sequence(s):</b> (Type/paste your sequences in FASTA format)<BR><b>Note:</b> User can submit up to 25 sequences at a time.<br>If the submitted sequences are more than 25 it will predict only first 25 sequences.<br><TEXTAREA ROWS="5" COLS="60" NAME="atom"></TEXTAREA></P>
+			<P ALIGN ="CENTER"> <font face="Arial" color = "red" ><blink> OR</blink> </font><b>Upload FASTA file </b><INPUT TYPE = "FILE" name="file"> </P>
+			
+			 	<P ALIGN ="CENTER"> SVM threshold:&nbsp;&nbsp;&nbsp;
+			  
+			<SELECT name="svm_th">
+			  <OPTION value="-1"> -1.0
+			  <OPTION value="-.9"> -0.9
+			  <OPTION value="-.8"> -0.8
+			  <OPTION value="-.7"> -0.7
+			  <OPTION value="-.6"> -0.6
+			  <OPTION value="-.5"> -0.5
+			  <OPTION value="-.4"> -0.4
+			  <OPTION value="-.3"> -0.3
+			  <OPTION value="-.2"> -0.2
+			  <OPTION value="-.1"> -0.1
+			  <OPTION SELECTED value="0.0">0.0
+			  <OPTION value=".1"> 0.1
+			  <OPTION value=".2">0.2
+			  <OPTION value=".3">0.3
+			  <OPTION value=".4">0.4
+			  <OPTION value=".5">0.5
+			  <OPTION value=".6">0.6
+			  <OPTION value=".7">0.7
+			  <OPTION value=".8">0.8
+			  <OPTION value=".9">0.9
+			  <OPTION value="1.0"> 1.0
+		      </P>
+		      </SELECT></BR>
+		      
+</B> 
+<P ALIGN = "CENTER">
+  <INPUT TYPE = "SUBMIT" VALUE = "Run Prediction"> 
+  <INPUT TYPE = "RESET" VALUE = "Clear">
+</P>
+</FORM> 
+<!-- <P Align='justify'><FONT color="blue"><b>If you are using this server please site:</P> -->
+</td>
+</tr>
+</table>
+<h2>&nbsp;</h2>
+</td>
+</tr>
+</table>
+</html>    
